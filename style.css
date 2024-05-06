@@ -235,20 +235,21 @@ aside .sidebar .message-count {
 }
 
 /* ------- Dashboard --------- */
-main {
+main.dashboard {
   flex-grow: 1;
   display: flex;
   flex-direction: column;
   align-items: stretch;
   padding-top: 1.4rem;
+  height: 100%;
 }
 
-main > * {
+main.dashboard > * {
   max-width: 100%;
   padding: 1rem;
 }
 
-main .date {
+main.dashboard .date {
   display: inline-block;
   background: var(--color-light);
   border-radius: var(--border-radius-1);
@@ -256,19 +257,19 @@ main .date {
   padding: 0.5rem 1.6rem;
 }
 
-main .date input[type='date'] {
+main.dashboard .date input[type='date'] {
   background: transparent;
   color: var(--color-dark);
 }
 
-main .insights {
+main.dashboard .insights {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
   gap: 1rem;
   overflow-y: auto;
 }
 
-main .insights > div {
+main.dashboard .insights > div {
   background: var(--color-white);
   padding: var(--card-padding);
   border-radius: var(--card-border-radius);
@@ -276,15 +277,30 @@ main .insights > div {
   box-shadow: var(--box-shadow);
   transition: all 400ms ease;
 }
-main .insights > div:hover {
+main.dashboard .insights > div:hover {
   box-shadow: none;
 }
 
-main .insights > div span {
-  background: coral;
+main.dashboard .insights > div span {
+  /* background: coral; */
 }
 
-main .insights > div .progress {
+.dashboard .card-icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  background: coral;
+  border-radius: 50%;
+}
+
+.dashboard .card-icon svg {
+  width: 1.5rem !important;
+  height: auto;
+}
+
+main.dashboard .insights > div .progress {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -295,14 +311,14 @@ main .insights > div .progress {
   overflow: hidden;
 }
 
-main .insights > div .progress svg {
+main.dashboard .insights > div .progress svg {
   width: 100%;
   max-width: 100px;
   min-width: 30px;
   height: auto;
 }
 
-main .insights svg {
+main.dashboard .insights svg {
   width: 100%;
   height: auto;
 }
@@ -318,7 +334,7 @@ main .insights svg {
       flex: 0 0 150px; /* Reduce el tamaño de aside en pantallas pequeñas */
   }
   main {
-      flex-grow: 1;
+    flex-grow: 1;
   }
 }
 
